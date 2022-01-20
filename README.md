@@ -1,5 +1,6 @@
 # TikTok-Downloader #
-Download TikTok videos without WaterMark using Command Line PHP
+Download TikTok videos without WaterMark using Command Line PHP.
+Currently i'm using API so if you guys want it raw just contact me @stuffwedid on Telegram
 
 
 ## Usage example ##
