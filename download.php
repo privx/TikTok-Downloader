@@ -2,7 +2,7 @@
 error_reporting(0);
 
 echo "[?] url: ";
-$url = trim(fgets(STDIN))?: exit("null"); /*$url = $_GET['y']?: exit("null");*/
+$url = trim(fgets(STDIN))?: exit("null");
 
 $temp_fileName = "tikvids/tikvid_".md5(uniqid()).".mp4";
 $temp_video = getVideo($url);
