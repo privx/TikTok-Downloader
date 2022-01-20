@@ -8,7 +8,7 @@ echo "[?] file type [a. mp4 b. mp3]: ";
 $type = trim(fgets(STDIN))?: exit("null");
 $ext = ($type == "a") ? "mp4" : "mp3";
 
-$temp_fileName = "tikvids/vid_".md5(uniqid()).$ext;
+$temp_fileName = "tikvids/vid_".md5(uniqid()).".$ext";
 $temp_video = getVideo($url, $ext);
 $fileName = saveFile($temp_video,$temp_fileName);
 (filesize($temp_fileName) > 0)? print("[>] File saved! on ".$temp_fileName) : unlink($temp_fileName);
