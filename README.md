@@ -5,7 +5,7 @@ Currently i'm using API so if you guys want it raw just contact me @stuffwedid o
 
 ## Usage example ##
 Input:
-- Copy & Paste a Valid TikTok URL Video and hit enter to run [e.g vt.tiktok.com/tiktokid or tiktok.com/@username/video/tiktokid]
+- Copy & Paste a Valid TikTok URL Video and hit enter to run [e.g <b>vt.tiktok.com/tiktokid</b> or <b>tiktok.com/@username/video/tiktokid</b>]
 
 
 ## Features ##
