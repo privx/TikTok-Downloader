@@ -1,15 +1,15 @@
 # TikTok-Downloader #
-Download TikTok videos without WaterMark using Command Line PHP.
+Download TikTok videos without WaterMark or even the music, using Command Line PHP.
 Currently i'm using API so if you guys want it raw just contact me @stuffwedid on Telegram
 
 
 ## Usage example ##
 Input:
-- Copy & Paste a Valid TikTok URL Video and hit enter to run
+- Copy & Paste a Valid TikTok URL Video and hit enter to run [e.g vt.tiktok.com/tiktokid or tiktok.com/@username/video/tiktokid]
 
 
 ## Features ##
-- Actually there's no features in this file, it's kinda slow when you running or maybe it depends on your connection. mine is s$ck
+- More faster than the latest one
 
 
 ## Installation Xampp ##
@@ -37,8 +37,8 @@ $ php download.php
 #### Version 0.1.0 (January 20, 2022) ####
 - Initial release.
 #### Version 0.1.1 (January 21, 2022) ####
-- Support MP3 files.
-- New server, more faster.
+- New server
+- Support MP3 files
 
 
 
