@@ -4,7 +4,7 @@ error_reporting(0);
 echo "[?] url: ";
 $url = trim(fgets(STDIN))?: exit("null");
 
-$temp_fileName = "tikvids/tikvid_".md5(uniqid()).".mp4";
+$temp_fileName = "tikvids/vid_".md5($url).".mp4";
 $temp_video = getVideo($url);
 $fileName = write_to_file($temp_video,$temp_fileName);
 (filesize($temp_fileName) > 0)? print("[>] File saved! on ".$temp_fileName) : unlink($temp_fileName);
