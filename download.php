@@ -1,4 +1,5 @@
 <?php
+#author : bimagates
 error_reporting(0);
 
 echo "[?] url: ";
