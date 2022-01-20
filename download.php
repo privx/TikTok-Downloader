@@ -14,9 +14,8 @@ function getVideo($url,$timeout = 60){
     $startTime = time();
     curl_setopt($ch, CURLOPT_URL, "http://34.125.190.190/APl/tikurl.php?tu=".$url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_AUTOREFERER, false);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
     curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
     $result = curl_exec($ch);
     if(time() > $startTime + $timeout) exit("[!] Timeout");
     $jdec = json_decode($result, true);
