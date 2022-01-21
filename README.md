@@ -36,9 +36,12 @@ $ php download.php
 ## Changelog ##
 #### Version 0.1.0 (January 20, 2022) ####
 - Initial release.
-#### Version 0.1.1 (January 21, 2022) ####
+#### Version 0.2.0 (January 21, 2022) ####
 - New server
 - Support MP3 files
+#### Version 0.2.1 (January 21, 2022) ####
+- Include title while saving
+- Add copied file if exist
 
 
 
