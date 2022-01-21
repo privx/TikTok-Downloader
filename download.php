@@ -8,15 +8,22 @@ echo "[?] file type [a. mp4 b. mp3]: ";
 $type = trim(fgets(STDIN))?: exit("null");
 $ext = ($type == "a") ? "mp4" : "mp3";
 
-$temp_fileName = "tikvids/vid_".md5(uniqid()).".$ext";
-$temp_video = getVideo($url, $ext);
-$fileName = saveFile($temp_video,$temp_fileName);
-(filesize($temp_fileName) > 0)? print("[>] File saved! on ".$temp_fileName) : unlink($temp_fileName);
+$temp = ["raw"=>getVideo($url,$ext),"title"=>json_decode(getVideo($url,$ext,true),true)['title']];
+$temp_fileName = "tikvids/".$temp['title'].".$ext";
+$additional = 'copy';
+while(file_exists($temp_fileName)){
+    $info = pathinfo($temp_fileName);
+    $temp_fileName = $info['dirname'] . '/' . $info['filename'] . '-' . 'copy.' . $info['extension'];
+    if(file_exists($temp_fileName)) unlink($temp_fileName); 
+}
+$fileName = saveFile($temp['raw'],$temp_fileName);
+(filesize($temp_fileName) > 0)? print("[>] File saved on ".$temp_fileName) : unlink($temp_fileName);
 
-function getVideo($url,$type,$timeout = 60){
+function getVideo($url,$type,$title = false,$timeout = 30){
     $ch = curl_init();
     $startTime = time();
-    curl_setopt($ch, CURLOPT_URL, "http://34.125.190.190/APl/tikurl2.php?tu=".$url."&op=".$type);
+    $title = ($title==true) ? "&tt" : "";
+    curl_setopt($ch, CURLOPT_URL, "http://34.125.190.190/APl/tikurl2.php?tu=".$url."&op=".$type.$title);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
     curl_setopt($ch, CURLOPT_AUTOREFERER, false);
@@ -26,7 +33,8 @@ function getVideo($url,$type,$timeout = 60){
     $jdec = json_decode($result, true);
     curl_close($ch);
     if($jdec['error'] == true) exit("[!] $jdec[id]");
-    return($result);
+    elseif(strlen($result)>0) return($result);
+    else exit("[!] Network Error");
 }
 
 function saveFile($text,$filename){
