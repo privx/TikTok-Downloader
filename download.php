@@ -10,7 +10,6 @@ $ext = ($type == "a") ? "mp4" : "mp3";
 
 $temp = ["raw"=>getVideo($url,$ext),"title"=>json_decode(getVideo($url,$ext,true),true)['title']];
 $temp_fileName = "tikvids/".$temp['title'].".$ext";
-$additional = 'copy';
 while(file_exists($temp_fileName)){
     $info = pathinfo($temp_fileName);
     $temp_fileName = $info['dirname'] . '/' . $info['filename'] . '-' . 'copy.' . $info['extension'];
